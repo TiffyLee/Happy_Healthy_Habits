@@ -52,6 +52,13 @@ def round2(bricksy, init_size):
     elif choice2 == "chips":
         bricksy.happiness_level -= 10
         bricksy.isHappy = False
+        if bricksy.happiness_level < 0:
+            Graphics.clearscreen()
+            Graphics.screen.bgpic("kitchen.png")
+            Graphics.angry(0)
+            print("You killed off Bricksy!")
+            time.sleep(1.5)
+            quit()
         Graphics.clearscreen()
         Graphics.screen.bgpic("kitchen.png")
         Graphics.angry(init_size - 55)
@@ -72,6 +79,13 @@ def round3(bricksy, init_size):
     elif choice3 == "candy bar":
         bricksy.happiness_level -= 10
         bricksy.isHappy = False
+        if bricksy.happiness_level < 0:
+            Graphics.clearscreen()
+            Graphics.screen.bgpic("kitchen.png")
+            Graphics.angry(0)
+            print("You killed off Bricksy!")
+            time.sleep(1.5)
+            quit()
         Graphics.clearscreen()
         Graphics.screen.bgpic("kitchen.png")
         Graphics.angry(init_size - 55)
@@ -92,6 +106,13 @@ def round4(bricksy, init_size):
     elif choice4 == "burger":
         bricksy.happiness_level -= 10
         bricksy.isHappy = False
+        if bricksy.happiness_level < 0:
+            Graphics.clearscreen()
+            Graphics.screen.bgpic("kitchen.png")
+            Graphics.angry(0)
+            print("You killed off Bricksy!")
+            time.sleep(1.5)
+            quit()
         Graphics.clearscreen()
         Graphics.screen.bgpic("kitchen.png")
         Graphics.angry(init_size - 55)
@@ -111,6 +132,13 @@ def round5(bricksy, init_size):
     elif choice5 == "milkshake":
         bricksy.happiness_level -= 10
         bricksy.isHappy = False
+        if bricksy.happiness_level < 0:
+            Graphics.clearscreen()
+            Graphics.screen.bgpic("kitchen.png")
+            Graphics.angry(0)
+            print("You killed off Bricksy!")
+            time.sleep(1.5)
+            quit()
         Graphics.clearscreen()
         Graphics.screen.bgpic("kitchen.png")
         Graphics.angry(init_size - 55)
@@ -153,9 +181,6 @@ def main():
         init_size += 55
     elif not brick.isHappy:
         init_size -= 55
-    elif brick.happiness_level < 0:
-        print("You killed off Bricksy!")
-        quit()
 
     round3(brick, init_size)
     time.sleep(1.5)
@@ -164,11 +189,9 @@ def main():
 
     if brick.isHappy:
         init_size += 55
-    elif not brick.isHappy :
+    elif not brick.isHappy:
         init_size -= 55
-    elif brick.happiness_level < 0:
-        print("You killed off Bricksy!")
-        quit()
+
     round4(brick, init_size)
     time.sleep(1.5)
     Graphics.clearscreen()
@@ -177,9 +200,7 @@ def main():
         init_size += 55
     elif not brick.isHappy:
         init_size -= 55
-    elif brick.happiness_level < 0:
-        print("You killed off Bricksy!")
-        quit()
+
     round5(brick, init_size)
     time.sleep(1.5)
     Graphics.clearscreen()
@@ -188,9 +209,6 @@ def main():
         init_size += 55
     elif not brick.isHappy:
         init_size -= 55
-    elif brick.happiness_level < 0:
-        print("You killed off Bricksy!")
-        quit()
 
     print("Thank you for playing! " + allCorrect(brick))
 
